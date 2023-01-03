@@ -4,17 +4,24 @@ function initialize() {
     outputDiv = document.getElementById("output"); 
     guess = 50; 
     outputDiv.innerHTML = guess; 
-
-    numberLog = document.getElementById("lognum"); 
-    numberLog.innerHTML = "<br>" + guess; 
-
-    respLog = document.getElementById("logresp"); 
-    response = ""; 
+    
+    response=""; 
+    color=""; //Color based on response; color contrast and clarity
     getResponse(); 
-    respLog.innerHTML = "<br>" + response;
+
+    logTable = document.getElementById("log");
+    clearRows();  
+    var newRow = logTable.insertRow();
+    var newCell = newRow.insertCell(); 
+    newCell.innerHTML = 50; 
+    newCell = newRow.insertCell(); 
+    newCell.innerHTML = response; 
+    newCell.style.color = color;  
+    
 
     guessRemaining = document.getElementById("num"); 
-    guesses = 5; 
+    guesses = 5;
+    guessRemaining.innerHTML = 5;  
 
     winningStatement = document.getElementById("win"); 
     winningStatement.innerHTML = ""; 
@@ -22,30 +29,45 @@ function initialize() {
 
 }
 
+function clearRows() {
+    for (var i = 1; i < logTable.rows.length; ++i) {
+        logTable.deleteRow(i); 
+        i--; 
+    } 
+}
+
 function getResponse() {
     if (Math.abs(guess-number) <= 5) {
         response = "Very Hot"; 
+        color="red"; 
     }
     else if (Math.abs(guess-number) <= 8 && Math.abs(guess-number) >= 6) {
         response = "Hot";
+        color="red";
     }
     else if (Math.abs(guess-number) <= 15 && Math.abs(guess-number) >= 9) {
         response = "Very Warm";
+        color="red";
     }
     else if (Math.abs(guess-number) <= 20 && Math.abs(guess-number) >= 16) {
         response = "Warm";
+        color="red";
     }
     else if (Math.abs(guess-number) <= 30 && Math.abs(guess-number) >= 21) {
         response = "Cool";
+        color="#2d9af3";
     }
     else if (Math.abs(guess-number) <= 40 && Math.abs(guess-number) >= 31) {
         response = "Very Cool";
+        color="#2d9af3";
     }
     else if (Math.abs(guess-number) <= 55 && Math.abs(guess-number) >= 41) {
         response = "Cold";
+        color="#2d9af3";
     }
     else {
         response = "Very Cold"; 
+        color="#2d9af3";
     }
 }
 
@@ -101,18 +123,6 @@ function sub25() {
     outputDiv.innerHTML = guess; 
 }
 
-function logNumber() { 
-    if (guesses != 0) {
-        numberLog.innerHTML += "<br>" + guess;
-    }
-}
-
-function logResponse() {
-    if (guesses != 0) {
-        respLog.innerHTML += "<br>" + response;
-    }   
-}
-
 function subGuess() {
     guesses--; 
     if (guesses < 0) {
@@ -130,27 +140,36 @@ function submit() {
         winningStatement.innerHTML = ""; 
         subGuess(); 
         getResponse(); 
-        logNumber(); 
-        logResponse(); 
+        updateLog(); 
         win(); 
         lose(); 
     }
     
 }
 
+function updateLog() {
+    if (guesses != 0) {
+        var newRow = logTable.insertRow();
+        var newCell = newRow.insertCell(); 
+        newCell.innerHTML = guess; 
+        newCell = newRow.insertCell(); 
+        newCell.innerHTML = response; 
+        newCell.style.color = color; 
+    }
+}
+
 function win() {
     if (guess == number) {
         winningStatement.innerHTML = "Congratulations, you have guessed the number!"; 
+        winningStatement.style.padding = "20px"; 
     }
 }
 
 function lose() {
     if (guess != number && guesses == 0) {
         winningStatement.innerHTML = "Unfortunately, the number was " + number + ". You couldn't guess the number within five guesses. Try Again"; 
+        winningStatement.style.padding = "20px"; 
     }
 }
 
-function reset() {
-    initialize(); 
-}
 

@@ -47,8 +47,36 @@ h2 {
     text-align: center;
 }
 
+/*Grid and Flex displays help adjust for mobile screen size*/
+
 #buttons {
-    display: flexbox; 
+    width: 100%; 
+    height: 100%; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    align-items: center; 
+    justify-items: center;  
+}
+
+#subs {
+    display: flex; 
+    flex-direction: column; 
+    grid-column: 1; 
+    row-gap: 20px; 
+}
+
+#adds {
+    display: flex; 
+    flex-direction: column;
+    grid-column: 3; 
+    row-gap: 20px; 
+}
+
+#util {
+    display: flex; 
+    flex-direction: column; 
+    grid-column: 2; 
+    row-gap: 20px; 
 }
 
 #sub {
@@ -63,6 +91,8 @@ h2 {
     display: inline-block;
     font-size: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    grid-column: 1; 
+    cursor: pointer; 
 }
 
 #add {
@@ -77,6 +107,8 @@ h2 {
     display: inline-block;
     font-size: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    grid-column: 3; 
+    cursor: pointer; 
 }
 
 #subbtn, #resetbtn{
@@ -91,50 +123,42 @@ h2 {
     display: inline-block;
     font-size: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    grid-column: 2; 
+    cursor: pointer; 
 }
 
 #subbtn {
     margin-right: 5px; 
 }
 
-#lognum, #logresp {
+#logdiv {
+    width: 100%; 
+    height: 400px; 
+    margin-top: 30px; 
+}
+
+#log {
+    width: 100%; 
+    text-align: center; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px; 
-    margin-bottom: 100px; 
+    font-size: 50px;
 }
 
-#lognum, #guesses {
-    float: left;
-      
-}
-
-#logresp, #responses {
-    float: right; 
-}
-
-p {
+th {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px; 
-     
-}
-
-#guesses {
-    margin-left: 450px; 
-    margin-right: 150px; 
-}
-
-#responses {
-    margin-right: 420px; 
-    margin-left: 100px; 
+    font-size: 50px;
+    background-color:rgb(22, 25, 27); 
+    color: white; 
+    width: 50%; 
 }
 
 #win {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 40px;   
     text-align: center; 
-    position: fixed;
-    bottom: 5px;
-    width: 100%;
+    margin: 20px; 
+    background-color:rgb(22, 25, 27); 
+    color: white; 
 }
 
 #num {

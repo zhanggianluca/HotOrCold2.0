@@ -15,27 +15,44 @@
         <h2>A NUMBER GUESSING GAME</h2>
     </div> <!--Helps with the structure of the website to make it easier for text-readers-->
 
-    <div id="remain">Guesses Remaining: <span id="num">5</span></div>
+    <div id="remain">Guesses Remaining: <span id="num"><!--Helps with color contrast-->5</span></div> 
     <hr>
     <div id="heading">Your Guess:</div>
     <div id="output"></div>
     
-    <div id="buttons">
+    <div id="buttons"> <!--Ensures that the buttons can be easily
+    navigated using the keyboard only-->
+
+        <div id="subs">
         <button id="sub" onclick="sub25();">-25</button>
         <button id="sub" onclick="subTen();">-10</button>
         <button id="sub" onclick="subFive();">-5</button>
         <button id="sub" onclick="subOne();">-1</button>
+        </div>
+        
+        <div id="util">
         <button onclick="submit();" id="subbtn">Guess</button>
-        <button onclick="reset();" id="resetbtn">Reset</button>
-        <button id="add" onclick="addOne();">+1</button>
-        <button id="add" onclick="addFive();">+5</button>
-        <button id="add" onclick="addTen();">+10</button>
+        <button onclick="initialize();" id="resetbtn">Reset</button>
+        </div>
+
+        <div id="adds">
         <button id="add" onclick="add25();">+25</button>
+        <button id="add" onclick="addTen();">+10</button>
+        <button id="add" onclick="addFive();">+5</button>
+        <button id="add" onclick="addOne();">+1</button>
+        </div>
+
     </div>
-    <p style="color:#2d9af3" id="guesses">Guesses </p>
-    <p style="color:#ff0000" id="responses">Responses </p>
-    <div id="lognum"></div>
-    <div id="logresp"></div>
+
     <div id="win"></div>
+
+    <div id="logdiv">
+        <table id="log">
+            <tr>
+                <th>Guesses</th>
+                <th>Responses</th>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
