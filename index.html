@@ -1,0 +1,41 @@
+<!--Gianluca Zhang, Web Development EVEN Period 7-8, 11/17/22-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Hot and Cold</title>
+    <script src="script.js"></script>
+</head>
+<body onload="initialize();">
+    <div id="header">
+        <h1>HOT OR COLD</h1>
+        <h2>A NUMBER GUESSING GAME</h2>
+    </div> <!--Helps with the structure of the website to make it easier for text-readers-->
+
+    <div id="remain">Guesses Remaining: <span id="num">5</span></div>
+    <hr>
+    <div id="heading">Your Guess:</div>
+    <div id="output"></div>
+    
+    <div id="buttons">
+        <button id="sub" onclick="sub25();">-25</button>
+        <button id="sub" onclick="subTen();">-10</button>
+        <button id="sub" onclick="subFive();">-5</button>
+        <button id="sub" onclick="subOne();">-1</button>
+        <button onclick="submit();" id="subbtn">Guess</button>
+        <button onclick="reset();" id="resetbtn">Reset</button>
+        <button id="add" onclick="addOne();">+1</button>
+        <button id="add" onclick="addFive();">+5</button>
+        <button id="add" onclick="addTen();">+10</button>
+        <button id="add" onclick="add25();">+25</button>
+    </div>
+    <p style="color:#2d9af3" id="guesses">Guesses </p>
+    <p style="color:#ff0000" id="responses">Responses </p>
+    <div id="lognum"></div>
+    <div id="logresp"></div>
+    <div id="win"></div>
+</body>
+</html>
