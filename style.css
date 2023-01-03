@@ -1,0 +1,142 @@
+body {
+    margin: 0px; 
+    padding: 0px; 
+    display: grid; 
+}
+
+#header { /* Helps with the color contrast and structure of the website*/
+    width: 100%; 
+    height: 100%; 
+    margin: 0px;   
+    display: grid;  
+    text-align: center; 
+    background-color: rgb(22, 25, 27); 
+    color: white; 
+} 
+
+h1, h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center; 
+}
+
+h1 {
+    font-size: 70px; 
+    margin-bottom: 0; 
+}
+
+h2 {
+    font-size: 40px; 
+}
+
+#remain {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px; 
+    text-align: center; 
+    padding: 50px; 
+}
+
+#heading {
+    font-size: 100px; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    text-align: center; 
+}
+
+#output {
+    font-size: 200px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+    text-align: center;
+}
+
+#buttons {
+    display: flexbox; 
+}
+
+#sub {
+    background-color: #2d9af3;
+    border: none;
+    height: 80px; 
+    width: 150px; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+#add {
+    background-color: #ff0000;
+    border: none;
+    height: 80px; 
+    width: 150px; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#subbtn, #resetbtn{
+    background-color: #cacaca;
+    border: none;
+    height: 100px; 
+    width: 200px; 
+    margin-left: 20px; 
+    margin-right: 20px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#subbtn {
+    margin-right: 5px; 
+}
+
+#lognum, #logresp {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px; 
+    margin-bottom: 100px; 
+}
+
+#lognum, #guesses {
+    float: left;
+      
+}
+
+#logresp, #responses {
+    float: right; 
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px; 
+     
+}
+
+#guesses {
+    margin-left: 450px; 
+    margin-right: 150px; 
+}
+
+#responses {
+    margin-right: 420px; 
+    margin-left: 100px; 
+}
+
+#win {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;   
+    text-align: center; 
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
+}
+
+#num {
+    color: red; 
+}
